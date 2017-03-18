@@ -1,0 +1,45 @@
+.container {
+  color: #333;
+}
+
+.textbox {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 2px solid #666;
+}
+.imgbox {
+  margin: 0 auto;
+}
+
+.imgbox img {
+  width: 200px;
+  height: 200px;
+  padding-top: 5px;
+  object-fit: cover;
+}
+
+.caption {
+  font-size: 0.8em;
+  font-style: Italic;
+}
+img.grey {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+#page {
+ margin-top: 100px; 
+}
+.navbar-right {
+  padding: 25px 30px;
+}
+.navbar-toggle {
+  top: 25px; 
+}
+.navbar-header,.navbar,.nav,.navbar-brand {
+  min-height: 100px;
+}
+.navbar-brand img {
+  height: 100%;
+}
