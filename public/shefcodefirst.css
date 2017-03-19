@@ -45,13 +45,22 @@ img.grey {
   color: #ccc;
 }
 
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+  color: #ddd;
+  background-color: #444;
+}
 
 .navbar-default .navbar-nav>.open, 
 .navbar-default .navbar-nav>.open a, 
 .navbar-default .navbar-nav>.open a:focus, 
 .navbar-default .navbar-nav>.open a:hover,
+.dropdown-header a:focus,
+.dropdown-header a:hover,
 .navbar-default .navbar-nav>li>a:focus,
-.navbar-default .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>li>a:hover,
+.dropdown-menu>li>a:focus, 
+.dropdown-menu>li>a:hover {
   color: #ddd;
   background-color: #444;
 }
