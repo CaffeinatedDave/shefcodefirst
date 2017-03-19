@@ -1,5 +1,7 @@
 .container {
   color: #333;
+  font-family: 'Raleway', serif;
+  font-size: 1.4em;
 }
 
 .textbox {
@@ -39,7 +41,38 @@ img.grey {
 }
 .navbar-header,.navbar,.nav,.navbar-brand {
   min-height: 100px;
-  max-height: 100px;
+  background-color: #333;
+  color: #ccc;
+}
+
+
+.navbar-default .navbar-nav>.open, 
+.navbar-default .navbar-nav>.open a, 
+.navbar-default .navbar-nav>.open a:focus, 
+.navbar-default .navbar-nav>.open a:hover,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+  color: #ddd;
+  background-color: #444;
+}
+
+.dropdown-menu {
+  padding: 0;
+  font-weight: 200;
+}
+.dropdown-menu .divider {
+  margin: 0;
+  padding: 9px 0;
+}
+.dropdown-header {
+  font-weight: 800;
+}
+.dropdown-menu,
+.dropdown-header,
+.dropdown-menu .divider,
+.navbar-default .navbar-nav>.open a {
+  color: #ccc;
+  background-color: #333;
 }
 .navbar-brand img {
   margin: auto;
