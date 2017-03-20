@@ -86,3 +86,22 @@ img.grey {
 .navbar-brand img {
   margin: auto;
 }
+
+.winner {
+  text-align: center;
+  
+}
+.winner img {
+  border: 2px solid #333;
+}
+.footnote {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+.footnote .mail {
+  font-weight: 600;
+}
