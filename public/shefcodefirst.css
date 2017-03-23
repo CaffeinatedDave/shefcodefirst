@@ -10,6 +10,11 @@
   text-align: center;
   border-bottom: 2px solid #666;
 }
+.textbox img {
+  width: 250px;
+  margin: auto;
+}
+
 .imgbox {
   margin: 0 auto;
 }
