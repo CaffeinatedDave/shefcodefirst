@@ -38,6 +38,20 @@ img.grey {
 #page {
   margin-top: 100px; 
 }
+
+.portfolio-item {
+  text-align: center;
+}
+
+.portfolio-item img {
+  max-height: 200px;
+  margin: auto;
+}
+
+.winner .portfolio-item img {
+  max-height: none;
+}
+
 .navbar-right {
   padding: 25px 30px;
 }
@@ -94,8 +108,8 @@ img.grey {
 
 .winner {
   text-align: center;
-  
 }
+  
 .winner img {
   border: 2px solid #333;
 }
