@@ -28,9 +28,9 @@ not_found do
 end
 
 before do
-  @menu = {}
-  @menu[:HTML] = client.entries(content_type: 'courses').select{|c| c.type == "HTML"}
-  @menu[:Python] = client.entries(content_type: 'courses').select{|c| c.type == "Python"}
+#  @menu = {}
+#  @menu[:HTML] = client.entries(content_type: 'courses').select{|c| c.type == "HTML"}
+#  @menu[:Python] = client.entries(content_type: 'courses').select{|c| c.type == "Python"}
   if ENV['debug'] == true
     logger.info request.env.to_s
   end
