@@ -29,32 +29,30 @@
 <h1>Our Instructors</h1>
 
 <div class="imgbox" >
-  <a href="http://twitter.com/TejayWhite">
-    <img src="/img/tejay.jpg" class="grey"/>
+  <%@instructors.each do |i|%>
+  <a href="http://twitter.com/<%=i.fields[:twitter_handle]%>">
+    <img src="<%=i.fields[:image].image_url%>" class="grey"/>
   </a>
-  <a href="http://twitter.com/CaffinatedDave" >
-    <img src="/img/dave.jpg" class="grey">
-  </a>
-  <a href="http://twitter.com/chrisbingham" >
-    <img src="/img/chris.jpg" class="grey">
-  </a>
-  <a href="http://twitter.com/ixek" >
-    <img src="/img/tania.jpg" class="grey">
-  </a>
-  <a href="http://twitter.com/MrDarrenV" >
-    <img src="/img/darren.jpg" class="grey">
-  </a>
+  <%end%>
 </div>
 
-<p class="caption">Tejay White, Dave Chaston, Chris Bingham, Tania Allard, Darren Vong</p>
+<p class="caption">
+  <%=@instructors.map{|i| i.fields[:name]}.join(", ")%>
+</p>
 
 <p>Tell everyone else how awesome they are - nominate them as your <a href="https://codefirstgirls.typeform.com/to/zVjXUU" >instructor of the month!</a></p>
 
 <h1>Our Ambassadors</h1>
 
 <div class="imgbox" >
-  <img src="https://pbs.twimg.com/media/C7EcSP-W4AIh2yM.jpg" class="grey"/>
+  <%@ambassadors.each do |i|%>
+  <a href="http://twitter.com/<%=i.fields[:twitter_handle]%>">
+    <img src="<%=i.fields[:image].image_url%>" class="grey"/>
+  </a>
+  <%end%>
 </div>
 
-<p class="caption">Sophie Kessler, Pauline Narvas</p>
+<p class="caption">
+  <%=@ambassadors.map{|i| i.fields[:name]}.join(", ")%>
+</p>
 </div>
