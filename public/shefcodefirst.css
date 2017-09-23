@@ -36,7 +36,7 @@ img.grey {
 }
 
 #page {
-  margin-top: 100px; 
+  margin-top: 100px;
 }
 
 .portfolio-item {
@@ -56,7 +56,7 @@ img.grey {
   padding: 25px 30px;
 }
 .navbar-toggle {
-  top: 25px; 
+  top: 25px;
 }
 .navbar-header,.navbar,.nav,.navbar-brand {
   min-height: 100px;
@@ -70,15 +70,15 @@ img.grey {
   background-color: #444;
 }
 
-.navbar-default .navbar-nav>.open, 
-.navbar-default .navbar-nav>.open a, 
-.navbar-default .navbar-nav>.open a:focus, 
+.navbar-default .navbar-nav>.open,
+.navbar-default .navbar-nav>.open a,
+.navbar-default .navbar-nav>.open a:focus,
 .navbar-default .navbar-nav>.open a:hover,
 .dropdown-header a:focus,
 .dropdown-header a:hover,
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover,
-.dropdown-menu>li>a:focus, 
+.dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
   color: #ddd;
   background-color: #444;
@@ -109,7 +109,7 @@ img.grey {
 .winner {
   text-align: center;
 }
-  
+
 .winner img {
   border: 2px solid #333;
 }
@@ -123,4 +123,23 @@ img.grey {
 
 .footnote .mail {
   font-weight: 600;
+}
+
+#cookieBanner {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+   background:#ccc;
+   border-top: 1px solid #333;
+   padding: 5px 10px;
+}
+#cookieAccept {
+  float: right;
+}
+
+/* IE 6 */
+* html #cookieBanner {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }

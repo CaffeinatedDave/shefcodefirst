@@ -1,10 +1,9 @@
-require 'sinatra'
-require 'erb'
-require 'dotenv'
-require 'open-uri'
 require 'contentful'
-
-#set :erb, :escape_html => true
+require 'dotenv'
+require 'erb'
+require 'open-uri'
+require 'sinatra'
+require 'sinatra/cookies'
 
 Dotenv.load
 
@@ -15,6 +14,12 @@ client = Contentful::Client.new(
   access_token: ENV['CONTENTFUL_ACCESS_TOKEN'],
   space: ENV['CONTENTFUL_SPACE_NAME']
 )
+
+use Rack::Session::Cookie, :key => 'rack.session',
+                           :domain => ENV['DOMAIN'],
+                           :path => '/',
+                           :expire_after => 10 * 365 * 24 * 60 * 60, # 10 years.
+                           :secret => ENV['COOKIE_SECRET']
 
 helpers do
   def logger
@@ -28,6 +33,8 @@ not_found do
 end
 
 before do
+  logger.info(cookies)
+  @showCookieNotification = cookies[:acceptCookies] != 'Y'
   @menu = {}
   @menu[:html] = client.entries(content_type: 'course').select{|c| c.type == "HTML"}.sort{|l, r| l.fields[:order] <=> r.fields[:order]}
   @menu[:python] = client.entries(content_type: 'course').select{|c| c.type == "Python"}.sort{|l, r| l.fields[:order] <=> r.fields[:order]}
@@ -45,6 +52,8 @@ end
 get '/about/?' do
   erb :about
 end
+
+
 
 get '/contact/?' do
   erb :contact
