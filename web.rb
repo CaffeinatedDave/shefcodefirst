@@ -28,9 +28,9 @@ not_found do
 end
 
 before do
-#  @menu = {}
-#  @menu[:HTML] = client.entries(content_type: 'courses').select{|c| c.type == "HTML"}
-#  @menu[:Python] = client.entries(content_type: 'courses').select{|c| c.type == "Python"}
+  @menu = {}
+  @menu[:html] = client.entries(content_type: 'course').select{|c| c.type == "HTML"}.sort{|l, r| l.fields[:order] <=> r.fields[:order]}
+  @menu[:python] = client.entries(content_type: 'course').select{|c| c.type == "Python"}.sort{|l, r| l.fields[:order] <=> r.fields[:order]}
   if ENV['debug'] == true
     logger.info request.env.to_s
   end
@@ -50,12 +50,11 @@ get '/contact/?' do
   erb :contact
 end
 
-get '/:course/?' do
-  logger.info "Trying to play #{params['course']}"
-  begin
-    erb params['course'].to_sym
-  rescue
-    status 404
-    erb '404'.to_sym
-  end
+get '/course/:course/?' do
+  logger.info "Trying to find #{params['course']}"
+    @projects = client.entries(content_type: 'project').select{|c| c.course.course_name == params['course']}
+    @winners = @projects.select{|p| p.winner > 0}.sort{|l, r| l.order <=> r.order}
+    @course = client.entries(content_type: 'course').select{|c| c.course_name == params['course']}[0]
+    @type = @course.type == "HTML" ? "HTML Beginners" : "Python Advanced"
+    erb :course
 end

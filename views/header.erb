@@ -17,12 +17,15 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li class="dropdown-header">HTML Beginners</li>
-                  <li><a href="htmlaw16">AW 2016</a></li>
-                  <li><a href="htmlss17">SS 2017</a></li>
+                  <% @menu[:html].each do |h| %>
+                    <li><a href="/course/<%=h.course_name%>"><%=h.menu_name%></a></li>
+                  <% end %>
                   <li class="dropdown-header"><a href="http://www.codefirstgirls.org.uk/free-community-courses.html">Apply now for AW 2017</a></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Python Advanced</li>
-                  <li><a href="pythonss17">SS 2017</a></li>
+                  <% @menu[:python].each do |h| %>
+                    <li><a href="/course/<%=h.course_name%>"><%=h.menu_name%></a></li>
+                  <% end %>
                   <li class="dropdown-header"><a href="http://www.codefirstgirls.org.uk/free-community-courses.html">Apply now for AW 2017</a></li>
                 </ul>
               </li>

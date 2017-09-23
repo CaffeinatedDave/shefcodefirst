@@ -30,14 +30,14 @@
 
 <div class="imgbox" >
   <%@instructors.each do |i|%>
-  <a href="http://twitter.com/<%=i.fields[:twitter_handle]%>">
-    <img src="<%=i.fields[:image].image_url%>" class="grey"/>
+  <a href="http://twitter.com/<%=i.twitter_handle%>">
+    <img src="<%=i.image.image_url%>" class="grey"/>
   </a>
   <%end%>
 </div>
 
 <p class="caption">
-  <%=@instructors.map{|i| i.fields[:name]}.join(", ")%>
+  <%=@instructors.map{|i| i.name}.join(", ")%>
 </p>
 
 <p>Tell everyone else how awesome they are - nominate them as your <a href="https://codefirstgirls.typeform.com/to/zVjXUU" >instructor of the month!</a></p>
@@ -46,13 +46,13 @@
 
 <div class="imgbox" >
   <%@ambassadors.each do |i|%>
-  <a href="http://twitter.com/<%=i.fields[:twitter_handle]%>">
-    <img src="<%=i.fields[:image].image_url%>" class="grey"/>
+  <a href="http://twitter.com/<%=i.twitter_handle%>">
+    <img src="<%=i.image.image_url%>" class="grey"/>
   </a>
   <%end%>
 </div>
 
 <p class="caption">
-  <%=@ambassadors.map{|i| i.fields[:name]}.join(", ")%>
+  <%=@ambassadors.map{|i| i.name}.join(", ")%>
 </p>
 </div>
