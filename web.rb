@@ -62,7 +62,7 @@ end
 get '/course/:course/?' do
   logger.info "Trying to find #{params['course']}"
     @projects = client.entries(content_type: 'project').select{|c| c.course.course_name == params['course']}
-    @winners = @projects.select{|p| p.winner > 0}.sort{|l, r| l.order <=> r.order}
+    @winners = @projects.select{|p| p.winner > 0}.sort{|l, r| l.winner <=> r.winner}
     @course = client.entries(content_type: 'course').select{|c| c.course_name == params['course']}[0]
     @type = @course.type == "HTML" ? "HTML Beginners" : "Python Advanced"
     erb :course
